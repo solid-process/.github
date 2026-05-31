@@ -4,7 +4,9 @@
   <strong><em>Write business logic that scales.</em></strong>
 </p>
 
-Solid Process is where the business rules of a Ruby or Rails app go to stay legible. Each library does one job, composes with the rest, and keeps the same shape whether you're writing a single service or wiring up a whole domain. As more of that code gets read and written by AI agents, the structure that keeps a process clear for a teammate is the same structure that keeps it cheap for an agent to reason about.
+Solid Process is where the **`business rules`** of a Ruby or Rails app go to **`stay legible`**. Each library does one job, composes with the rest, and keeps the same shape whether you're writing a single service or wiring up a whole domain.
+
+As more of that code gets read and written by AI agents, **`the structure that keeps a process clear for a teammate`** is the same structure that **`keeps it cheap for an agent to reason about`**.
 
 > _Make it work, make it better, make it even better, without throwing away what came before._
 
@@ -12,9 +14,17 @@ Solid Process is where the business rules of a Ruby or Rails app go to stay legi
 
 ### ⚛️ [solid-process](https://github.com/solid-process/solid-process)
 
-`solid-process` is a Ruby/Rails library that encapsulates business logic into manageable processes. It simplifies writing, testing, maintaining, and evolving your code, so it stays clear and approachable as your application scales.
+It is a Ruby/Rails library that **`encapsulates business logic into manageable processes`**. It simplifies writing, testing, maintaining, and evolving your code, so it stays clear and approachable as your application scales.
 
-Write a process as a single object: typed input, an ordered set of steps, and a result that's either `Success(...)` or `Failure(...)`. From that one shape you get composition, nested processes, transactions, and built-in instrumentation, all without fighting Rails conventions. It's the evolution of [`u-case`](https://github.com/serradura/u-case), with fewer compatibility constraints and everything learned from running it in production.
+Write a process as a single object with typed input, an ordered set of steps, and a result. From that one shape you get:
+
+1. Composition
+2. Nested processes
+3. Database transactions
+4. Built-in instrumentation
+5. All without fighting Rails conventions
+
+It's the evolution of [`u-case`](https://github.com/serradura/u-case), with fewer compatibility constraints and everything learned from running it in production.
 
 ### 🔀 [solid-result](https://github.com/solid-process/solid-result)
 
@@ -28,11 +38,11 @@ Interface contracts in pure Ruby. Declare the boundary an object has to honor, w
 
 "Talk is cheap. Show me the code," as Linus Torvalds put it. So here are two repositories instead of an argument.
 
-They are the same application built at many levels, from a fat controller all the way to ports and adapters. I built them because this debate tends to run long on opinion and short on runnable examples: that Rails alone is always enough, or that you always need a hexagon around it. So here are some. Read the diffs and weigh the cost for yourself.
+They are the same application built at many levels, from a fat controller all the way to ports and adapters. I built them because the loudest opinions in this space usually arrive with no working example attached: that Rails alone is always enough, or that you always need a hexagon around it. Read the diffs and weigh the cost for yourself.
 
 ### ✨ [solid-rails-app](https://github.com/solid-process/solid-rails-app)
 
-The same app climbing across twelve branches, from simple service and form objects up to a full ports-and-adapters (hexagonal) build with `solid-process`. It shows what the gem buys at each step, and where stopping early is already a production-ready win. Nothing here fights Rails; it stays inside the framework's conventions and leans on them.
+The same app climbing across twelve branches, from simple service and form objects up to a full ports-and-adapters (hexagonal) build with `solid-process`. It shows what the gem buys at each step, and where stopping early is already a production-ready win.
 
 ### 🚆 [rails-way-app](https://github.com/solid-process/rails-way-app)
 
@@ -43,21 +53,20 @@ The same Web and REST API app in eighteen versions, each one getting more out of
 A few rules shape the libraries:
 
 1. **One library, one job.** `solid-result` represents outcomes, `solid-adapters` guards boundaries, `solid-process` orchestrates steps. Reach for only the part you need.
-2. **Build on Rails, don't reinvent it.** `solid-process` is built on ActiveModel and ActiveSupport on purpose, reusing Rails' own building blocks instead of reimplementing them. That's a deliberate break from `u-case`, which stayed Rails-optional. (`solid-result` and `solid-adapters` are the standalone pieces: pure Ruby, no framework attached.)
+2. **Build on Rails, don't reinvent it.** `solid-process` is built on ActiveModel and ActiveSupport on purpose, reusing Rails' own building blocks instead of reimplementing them. That's a deliberate break from `u-case`, which stayed Rails-optional.
 3. **Readable as it scales.** A process should be as easy to follow in year three as on day one, for whoever (or whatever) reads it next.
 4. **Pragmatic, not dogmatic.** Adopt it where it fits and leave the rest as vanilla Rails. The goal is the right tool for the job, not architecture for its own sake.
 
 ## Lineage
 
-These libraries grew out of [`u-case`](https://github.com/serradura/u-case) and the [μ-gems](https://github.com/u-gems) collection, an earlier set of small Ruby libraries with a functional heart. `solid-process` keeps that goal, folding in everything learned from years of u-case in production across many companies.
+These libraries grew out of [`u-case`](https://github.com/serradura/u-case) and the [μ-gems](https://github.com/u-gems) collection, an earlier set of small Ruby libraries with a functional heart. `solid-process` keeps that goal, folding in everything learned from years of use in production across many companies.
 
 `u-case` is not going anywhere: its public API is frozen and stays supported, so apps that depend on it keep working untouched. `solid-process` is the place where the abstractions get rethought without that constraint. If you're happy with u-case, stay; if you want the next-generation ideas, they live here.
 
 ## Links
 
-- 🌐 Website: [solidprocess.dev](https://solidprocess.dev)
-- 🎨 Brand assets: [the-assets](https://github.com/solid-process/the-assets)
-- 👥 Community: [Ada.rb](https://adarb.org)
+- 🌐 Website: https://solidprocess.dev
+- 🎨 Brand assets: https://github.com/solid-process/the-assets
 
 ## License
 
