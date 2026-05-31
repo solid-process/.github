@@ -39,7 +39,7 @@ Interface contracts in pure Ruby. Declare the boundary an object has to honor, w
 
 ## Learn by example
 
-"Talk is cheap. Show me the code," as Linus Torvalds put it. So here are two repositories instead of an argument.
+**`"Talk is cheap. Show me the code"`**, as Linus Torvalds put it. So here are two repositories instead of an argument.
 
 They are the same application built at many levels, from a fat controller all the way to ports and adapters. I built them because the loudest opinions in this space usually arrive with no working example attached: that Rails alone is always enough, or that you always need a hexagon around it. Read the diffs and weigh the cost for yourself.
 
