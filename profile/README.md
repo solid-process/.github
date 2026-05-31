@@ -4,7 +4,7 @@
   <strong><em>Write business logic that scales.</em></strong>
 </p>
 
-Solid Process is where the business rules of a Ruby or Rails app go to stay legible. Each library does one job in plain Ruby, composes with the rest, and keeps the same shape whether you're writing a single service or wiring up a whole domain.
+Solid Process is where the business rules of a Ruby or Rails app go to stay legible. Each library does one job, composes with the rest, and keeps the same shape whether you're writing a single service or wiring up a whole domain. As more of that code gets read and written by AI agents, the structure that keeps a process clear for a teammate is the same structure that keeps it cheap for an agent to reason about.
 
 > _Make it work, make it better, make it even better, without throwing away what came before._
 
@@ -26,13 +26,17 @@ Interface contracts in pure Ruby. Declare the boundary an object has to honor, w
 
 ## Learn by example
 
+"Talk is cheap. Show me the code," as Linus Torvalds put it. So here are two repositories instead of an argument.
+
+They are the same application built at many levels, from a fat controller all the way to ports and adapters. I built them because this debate tends to run long on opinion and short on runnable examples: that Rails alone is always enough, or that you always need a hexagon around it. So here are some. Read the diffs and weigh the cost for yourself.
+
 ### ✨ [solid-rails-app](https://github.com/solid-process/solid-rails-app)
 
-The same kind of app with `solid-process` folded in across twelve branches, from simple service and form objects up to a full ports-and-adapters (hexagonal) build. It shows where the gems earn their place, and where stopping early is already a production-ready win.
+The same app climbing across twelve branches, from simple service and form objects up to a full ports-and-adapters (hexagonal) build with `solid-process`. It shows what the gem buys at each step, and where stopping early is already a production-ready win. Nothing here fights Rails; it stays inside the framework's conventions and leans on them.
 
 ### 🚆 [rails-way-app](https://github.com/solid-process/rails-way-app)
 
-The same Web and REST API app built in eighteen versions, each step getting more out of plain MVC and the Rails Way. Every version reports its lines of code and Rubycritic score, so you can see exactly what a refactor buys. This is the baseline: how far convention alone carries you before you reach for anything else.
+The same Web and REST API app in eighteen versions, each one getting more out of plain MVC and the Rails Way, no gems required. Every version reports its lines of code and Rubycritic score, so a refactor's cost is a number, not a feeling. It is the baseline for how far convention alone carries you, and the idea keeps going, pushed further still, in [Rails Whey](https://github.com/railswhey/app).
 
 ## How we think about it
 
@@ -40,7 +44,7 @@ A few rules shape the libraries:
 
 1. **One library, one job.** `solid-result` represents outcomes, `solid-adapters` guards boundaries, `solid-process` orchestrates steps. Reach for only the part you need.
 2. **Build on Rails, don't reinvent it.** `solid-process` is built on ActiveModel and ActiveSupport on purpose, reusing Rails' own building blocks instead of reimplementing them. That's a deliberate break from `u-case`, which stayed Rails-optional. (`solid-result` and `solid-adapters` are the standalone pieces: pure Ruby, no framework attached.)
-3. **Readable as it scales.** A process should be as easy to follow in year three as on day one. The structure that keeps it legible for the next person is the same structure that makes it cheap for an AI agent to reason about.
+3. **Readable as it scales.** A process should be as easy to follow in year three as on day one, for whoever (or whatever) reads it next.
 4. **Pragmatic, not dogmatic.** Adopt it where it fits and leave the rest as vanilla Rails. The goal is the right tool for the job, not architecture for its own sake.
 
 ## Lineage
