@@ -8,7 +8,10 @@ Solid Process is where the **`business rules`** of a Ruby or Rails app go to **`
 
 As more of that code gets read and written by AI agents, **`the structure that keeps a process clear for a teammate`** is the same structure that **`keeps it cheap for an agent to reason about`**.
 
-> _Make it work, make it better, make it even better, without throwing away what came before._
+> _Make it **`work`**;<br/>
+> Make it **`better`**;<br/>
+> Make it **`even better`**;<br/>
+> Without throwing away what came before._
 
 ## Featured
 
